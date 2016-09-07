@@ -4,30 +4,38 @@
     <meta charset="utf-8">
     <title></title>
 
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
     <link rel="stylesheet" href="./css/style.css">
 
     <script src="./vendor/jwt-decode.2.0.1.js"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.8/angular-resource.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
 
     <script src="/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
-
     <script src="http://maps.google.com/maps/api/js"></script>
 
     <script src="/app.js"></script>
-
+    <script src="/js/auth.service.js"></script>
+    <script src="/js/token.service.js"></script>
+    <script src="/js/user.service.js"></script>
+    <script src="/controllers/navbar.controller.js"></script>
     <script src="/controllers/searchController.js"></script>
-
+    <script src="/controllers/loginController.js"></script>
     <script src="/app.routes.js"></script>
 
   </head>
   <body>
-{{2+2}}
 
+    <header ng-controller="NavbarController as vm">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <a ui-sref="searchPage" class="navbar-brand">Home</a>
+          <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+          <button ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
+        </div>
+      </nav>
+    </header>
 
 
     <main class="content" ui-view>

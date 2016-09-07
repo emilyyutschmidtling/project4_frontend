@@ -11,7 +11,7 @@ function AppRoutes($stateProvider, $urlRouterProvider) {
       url: '/',
       templateUrl: './templates/home.html',
       controller: 'LoginController',
-      controllerAs: 'loginCtrl'
+      controllerAs: 'vm'
     })
 
     .state('searchPage', {
