@@ -1,2 +1,2 @@
 angular
-  .module('CFootprintsApp', [])
+  .module('CFootprintsApp', ['ui.router', 'ngResource', 'ngMap'])

@@ -2,7 +2,7 @@ angular
   .module('CFootprintsApp')
   .config(AppRoutes)
 
-AppRoutes.$inject = ['$stateProvider', '$urlRouterProvider'];
+// AppRoutes.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 function AppRoutes($stateProvider, $urlRouterProvider) {
 
