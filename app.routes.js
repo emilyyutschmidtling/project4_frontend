@@ -21,19 +21,5 @@ function AppRoutes($stateProvider, $urlRouterProvider) {
       controllerAs: 'searchCtrl'
     })
 
-    .state('drivePage', {
-      url: '/drive',
-      templateUrl: './templates/drive.html',
-      controller: 'SearchController',
-      controllerAs: 'searchCtrl'
-    })
-
-    .state('transitPage', {
-      url: '/transit',
-      templateUrl: './templates/transit.html',
-      controller: 'SearchController',
-      controllerAs: 'searchCtrl'
-    })
-
     $urlRouterProvider.otherwise('/')
 }
