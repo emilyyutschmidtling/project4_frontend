@@ -3,5 +3,10 @@ body {
 }
 
 .map {
-  width: 50%
+  width: 500px;
+  /*display: inline-flex;*/
+}
+
+.row {
+  display: inline-flex;
 }

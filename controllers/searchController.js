@@ -2,9 +2,9 @@ angular
   .module('CFootprintsApp')
   .controller('SearchController', SearchController)
 
-SearchController.$inject = ['$resource', 'NgMap']
+SearchController.$inject = ['$resource', 'NgMap', '$state']
 
-function SearchController($resource, NgMap) {
+function SearchController($resource, NgMap, $state) {
   var vm = this;
 
   vm.cat = "Patches"
@@ -29,13 +29,10 @@ function SearchController($resource, NgMap) {
   vm.submitAddresses = submitAddresses
 
   function submitAddresses() {
-
     vm.newAddresses.origin = vm.origin
     vm.newAddresses.destination = vm.destination
+    // $state.go('drivePage')
     console.log(vm.newAddresses)
   }
-}
 
-// ==========================
-//
-// ==========================
+}
