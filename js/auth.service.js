@@ -25,7 +25,7 @@
       var promise = $http({
         method: 'POST',
         // url:    '/api/token',
-        url:  'http://carbon-footprints.herokuapp.com/api/token',
+        url:  'https://carbon-footprints.herokuapp.com/api/token',
         // url:  'http://localhost:3000/api/token',
         data:   data,
         headers: {
