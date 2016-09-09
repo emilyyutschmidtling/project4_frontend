@@ -50,6 +50,8 @@ function SearchController($resource, NgMap, $state, $http) {
   vm.getDistance = getDistance;
   vm.drivingMiles = "";
   vm.transitMiles = "";
+  vm.drivingCO2 = "";
+  vm.transitCO2 = "";
 
   function getDistance() {
     var origin = vm.origin.split(".").join("").split(",").join("").split(" ").join("+")
@@ -73,6 +75,12 @@ function SearchController($resource, NgMap, $state, $http) {
       .then(function(res) {
         console.log("distance:", res.data.routes[0].legs[0].distance.text)
         vm.drivingMiles = res.data.routes[0].legs[0].distance.text
+
+        var numMilesDriving = vm.drivingMiles.split(" ").shift()
+        console.log("numMilesDriving", numMilesDriving)
+
+        vm.drivingCO2 = (numMilesDriving * 0.355).toFixed(3)
+        console.log("drivingCO2", vm.drivingCO2)
       })
 
     $http
@@ -80,8 +88,15 @@ function SearchController($resource, NgMap, $state, $http) {
       .then(function(res) {
         console.log("distance:", res.data.routes[0].legs[0].distance.text)
         vm.transitMiles = res.data.routes[0].legs[0].distance.text
+
+        var numMilesTransit = vm.transitMiles.split(" ").shift()
+        console.log("numMilesTransit", numMilesTransit)
+
+        vm.transitCO2 = (numMilesTransit * 0.055).toFixed(3)
+        console.log("transitCO2", vm.transitCO2)
       })
 
   }
+
 
 }
