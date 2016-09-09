@@ -1,5 +1,32 @@
 body {
-  background: aliceblue;
+  background: rgba(239, 245, 239, .2);
+}
+
+header {
+  background-image: url("https://i.imgur.com/wJu7nQ3.jpg?2");
+  background-size: cover;
+  padding-bottom: 300px;
+}
+
+h1.app-name {
+  padding-top: 50px;
+  padding-right: 25px;
+  text-align: right;
+  color: rgba(223, 236, 223, .7);
+  font-size: 60px;
+}
+
+h3.app-name{
+  color: rgba(223, 236, 223, .4);
+  text-align: right;
+  font-style: italic;
+  padding-left: 62%;
+  padding-right: 25px;
+}
+
+div.state-head {
+  color: rgb(79, 125, 79);
+  text-align: center;
 }
 
 .map {
@@ -10,4 +37,9 @@ body {
 
 .row {
   display: inline-flex;
+}
+
+input {
+  margin-right: 30px;
+  width: 400px;
 }
