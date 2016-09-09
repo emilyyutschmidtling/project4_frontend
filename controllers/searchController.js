@@ -10,8 +10,8 @@ function SearchController($resource, NgMap, $state, $http) {
   vm.cat = "Patches"
 
   vm.newAddresses = {
-    origin: "1520 2nd St, Santa Monica, CA",
-    destination: "11808 Kiowa Ave, Los Angeles, CA"
+    origin: "a",
+    destination: "b"
   }
   vm.origin = ""
   vm.destination = ""
@@ -49,6 +49,7 @@ function SearchController($resource, NgMap, $state, $http) {
 
   vm.getDistance = getDistance;
   vm.drivingMiles = "";
+  vm.transitMiles = "";
 
   function getDistance() {
     var origin = vm.origin.split(".").join("").split(",").join("").split(" ").join("+")
@@ -57,19 +58,28 @@ function SearchController($resource, NgMap, $state, $http) {
     console.log("origin:", origin)
     console.log("destination:", destination)
 
-    var driveRouteObject = "https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "4&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
+    var driveRouteObject = "https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
+
+    var transitRouteObject = "https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&mode=transit&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
 
     console.log("driveRouteObject", driveRouteObject)
+    console.log("transitRouteObject", transitRouteObject)
 
-    driveDistance = driveRouteObject
+    // driveDistance = driveRouteObject
     // driveDistance = driveRouteObject.routes[0].legs[0].distance.text
-    console.log(driveDistance)
 
     $http
-      .get(driveDistance)
+      .get(driveRouteObject)
       .then(function(res) {
         console.log("distance:", res.data.routes[0].legs[0].distance.text)
         vm.drivingMiles = res.data.routes[0].legs[0].distance.text
+      })
+
+    $http
+      .get(transitRouteObject)
+      .then(function(res) {
+        console.log("distance:", res.data.routes[0].legs[0].distance.text)
+        vm.transitMiles = res.data.routes[0].legs[0].distance.text
       })
 
   }
