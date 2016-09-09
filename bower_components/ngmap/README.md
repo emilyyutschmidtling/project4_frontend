@@ -65,7 +65,7 @@ Lazy Loading of Google Maps Javascript
     </div>
 
   If you need to pass in an API key to the javascript, you can set a scope
-  variable in your controller (e.g. `$scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE";`).
+  variable in your controller (e.g. `$scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc?key=YOUR_KEY_HERE";`).
   This can be set from a constant value in your app to standardise the API key to pass to google for multiple controllers.
 
     <div map-lazy-load="https://maps.google.com/maps/api/js"

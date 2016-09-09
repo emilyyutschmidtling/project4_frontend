@@ -12,7 +12,7 @@
  *
  * @example
  * Example:
- *   <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+ *   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc?libraries=places"></script>
  *   <input places-auto-complete types="['geocode']" on-place-changed="myCallback(place)" component-restrictions="{country:'au'}"/>
  */
 /* global google */
