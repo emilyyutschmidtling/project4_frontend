@@ -16,7 +16,7 @@ function SearchController($resource, NgMap, $state, $http) {
   vm.origin = ""
   vm.destination = ""
 
-  vm.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc?key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
+  vm.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
 
   NgMap.getMap('driving')
     .then(function(map) {
