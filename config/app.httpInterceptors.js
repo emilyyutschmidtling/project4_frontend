@@ -11,8 +11,7 @@
     $httpProvider.interceptors.push("jsonHeadersService");
     $httpProvider.interceptors.push("tokenSigningService");
     $httpProvider.interceptors.push("authErrorRedirect");
-    console.log("http", $httpProvider.interceptors)
-    $httpProvider.defaults.useXDomain = true;
+    console.log("http", $httpProvider.interceptors);
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
   }
 

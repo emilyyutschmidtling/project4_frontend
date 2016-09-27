@@ -60,9 +60,9 @@ function SearchController($resource, NgMap, $state, $http) {
     console.log("origin:", origin)
     console.log("destination:", destination)
 
-    var driveRouteObject = "https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
+    var driveRouteObject = "http://cors.io/?https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
 
-    var transitRouteObject = "https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&mode=transit&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
+    var transitRouteObject = "http://cors.io/?https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&mode=transit&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
 
     console.log("driveRouteObject", driveRouteObject)
     console.log("transitRouteObject", transitRouteObject)
@@ -71,7 +71,8 @@ function SearchController($resource, NgMap, $state, $http) {
     // driveDistance = driveRouteObject.routes[0].legs[0].distance.text
 
     $http
-      .get(driveRouteObject, {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }})
+      // .get(driveRouteObject, {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }})
+      .get(driveRouteObject)
       .then(function(res) {
         console.log("distance:", res.data.routes[0].legs[0].distance.text)
         vm.drivingMiles = res.data.routes[0].legs[0].distance.text
@@ -84,7 +85,8 @@ function SearchController($resource, NgMap, $state, $http) {
       })
 
     $http
-      .get(transitRouteObject, {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }})
+      // .get(transitRouteObject, {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }})
+      .get(transitRouteObject)
       .then(function(res) {
         console.log("distance:", res.data.routes[0].legs[0].distance.text)
         vm.transitMiles = res.data.routes[0].legs[0].distance.text
