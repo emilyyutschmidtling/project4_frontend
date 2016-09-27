@@ -71,7 +71,7 @@ function SearchController($resource, NgMap, $state, $http) {
     // driveDistance = driveRouteObject.routes[0].legs[0].distance.text
 
     $http
-      .get(driveRouteObject)
+      .get(driveRouteObject, {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }})
       .then(function(res) {
         console.log("distance:", res.data.routes[0].legs[0].distance.text)
         vm.drivingMiles = res.data.routes[0].legs[0].distance.text
@@ -84,7 +84,7 @@ function SearchController($resource, NgMap, $state, $http) {
       })
 
     $http
-      .get(transitRouteObject)
+      .get(transitRouteObject, {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }})
       .then(function(res) {
         console.log("distance:", res.data.routes[0].legs[0].distance.text)
         vm.transitMiles = res.data.routes[0].legs[0].distance.text
