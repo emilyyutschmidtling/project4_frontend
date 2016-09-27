@@ -60,9 +60,9 @@ function SearchController($resource, NgMap, $state, $http) {
     console.log("origin:", origin)
     console.log("destination:", destination)
 
-    var driveRouteObject = "http://cors.io/?https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
+    var driveRouteObject = "https://crossorigin.me/https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
 
-    var transitRouteObject = "http://cors.io/?https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&mode=transit&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
+    var transitRouteObject = "https://crossorigin.me/https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&mode=transit&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
 
     console.log("driveRouteObject", driveRouteObject)
     console.log("transitRouteObject", transitRouteObject)
