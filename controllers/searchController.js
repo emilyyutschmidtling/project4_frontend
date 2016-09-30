@@ -60,9 +60,15 @@ function SearchController($resource, NgMap, $state, $http) {
     console.log("origin:", origin)
     console.log("destination:", destination)
 
-    var driveRouteObject = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
+    var driveRouteObject1 = "/search"
 
-    var transitRouteObject = "https://crossorigin.me/https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&mode=transit&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
+    // var driveRouteObject = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
+
+    // var transitRouteObject = "https://crossorigin.me/https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&mode=transit&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
+
+    var driveRouteObject = "https://proj4corsanywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
+
+    var transitRouteObject = "https://proj4corsanywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +  "&destination=" + destination+ "&mode=transit&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
 
     // var driveRouteObject = "https://maps.googleapis.com/maps/api/js/directions/json?origin=" + origin +  "&destination=" + destination+ "&key=AIzaSyBLZCoHtlBHXnz1j6iNOmh7H4b2t1Njryc"
     //
@@ -90,24 +96,6 @@ function SearchController($resource, NgMap, $state, $http) {
         vm.drivingCO2 = (numMilesDriving * 0.355).toFixed(3)
         console.log("drivingCO2", vm.drivingCO2)
       })
-
-    // var xhr = new XMLHttpRequest();
-    //
-    // xhr.open('GET', driveRouteObject, true)
-    //
-    // xhr.onload = function(res) {
-    //   console.log("distance:", res.data.routes[0].legs[0].distance.text)
-    //   vm.drivingMiles = res.data.routes[0].legs[0].distance.text
-    //
-    //   var numMilesDriving = vm.drivingMiles.split(" ").shift()
-    //   console.log("numMilesDriving", numMilesDriving)
-    //
-    //   vm.drivingCO2 = (numMilesDriving * 0.355).toFixed(3)
-    //   console.log("drivingCO2", vm.drivingCO2)
-    // }
-    //
-    // xhr.send()
-
 
     $http
       // .get(transitRouteObject, {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }})
