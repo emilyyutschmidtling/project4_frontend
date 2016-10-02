@@ -9,6 +9,12 @@ function SearchController($resource, NgMap, $state, $http) {
 
   vm.cat = "Patches"
 
+  vm.placeChanged = function() {
+    vm.place = this.getPlace();
+    console.log('location', vm.place.geometry.location);
+    vm.map.setCenter(vm.place.geometry.location);
+  }
+
   vm.newAddresses = {
     origin: "a",
     destination: "b"

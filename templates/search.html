@@ -1,28 +1,32 @@
 <div class="state-head">
 
-<h1>Carbon Dioxide Emissions Calculator</h1>
+  <h1 class="searchPage">Carbon Dioxide Emissions Calculator</h1>
 
-<div>
-  My name is {{searchCtrl.cat}} the cat.
-</div>
+  </br>
 
-</br>
+  <!-- <div class="map" map-lazy-load="https://maps.google.com/maps/api/js"
+    map-lazy-load-params="{{googleMapsUrl}}">
+    <ng-map center="1520 2nd Street, Santa Monica, CA" zoom="20"></ng-map>
+  </div> -->
 
-<!-- <div class="map" map-lazy-load="https://maps.google.com/maps/api/js"
-  map-lazy-load-params="{{googleMapsUrl}}">
-  <ng-map center="1520 2nd Street, Santa Monica, CA" zoom="20"></ng-map>
-</div> -->
+  <form ng-submit="searchCtrl.submitAddresses()">
+    <div class="searchInputs">
+      <div>
+        <b>Starting Location:</b>
+        <!-- <input type="text" ng-model="searchCtrl.origin"> -->
+        <input type="text" ng-model="searchCtrl.origin" places-auto-complete on-place-changed="searchCtrl.placeChanged()"> <br/>
+      </div>
+      <div>
+        <b>Destination:</b>
+        <!-- <input type="text" ng-model="searchCtrl.destination"> -->
+        <input type="text" ng-model="searchCtrl.destination" places-auto-complete on-place-changed="searchCtrl.placeChanged()"> <br/>
+      </div>
+    </div>
+    <div class="searchSubmit">
+      <button id="searchButton" type="submit">Submit</button>
+    </div>
 
-<form ng-submit="searchCtrl.submitAddresses()">
-  <div>
-    Starting Location:
-    <input type="text" ng-model="searchCtrl.origin">
-    Destination:
-    <input type="text" ng-model="searchCtrl.destination">
-    <button type="submit">Submit</button>
-  </div>
-
-</form>
+  </form>
 
 </div>
 

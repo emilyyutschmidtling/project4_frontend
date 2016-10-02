@@ -16,6 +16,10 @@ h1.app-name {
   font-size: 60px;
 }
 
+h1.searchPage {
+  padding: 25px 0;
+}
+
 h3.app-name{
   color: rgba(223, 236, 223, .4);
   text-align: right;
@@ -31,7 +35,7 @@ div.state-head {
 
 .map {
   width: 600px;
-  padding: 50px
+  padding: 10px 50px
   /*display: inline-flex;*/
 }
 
@@ -42,4 +46,21 @@ div.state-head {
 input {
   margin-right: 30px;
   width: 400px;
+}
+
+div.searchInputs {
+  display: inline-flex;
+}
+
+div.searchSubmit {
+  display: block;
+  margin-top: 40px;
+}
+
+button#searchButton {
+  padding: 10px 30px;
+  font-weight: bold;
+  background: rgb(79, 125, 79);
+  color: white;
+
 }
